@@ -1,0 +1,40 @@
+@import '../../style/color';
+
+.detail {
+  padding: 8px 0;
+  background-color: $color-light_gray1;
+
+  .detail__desc {
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: bold;
+    text-align: center;
+    
+
+    .detail__link {
+      color: $color-sky_blue;
+      text-decoration: underline;
+    }
+  }
+}
+
+// >=768px desktop
+@media screen and (min-width: 768px) {
+  .detail {
+    padding: 22px 0;
+    background-color: $color-light_gray1;
+  
+    .detail__desc {
+      font-size: 22px;
+      line-height: 18px;
+      font-weight: bold;
+      text-align: center;
+      
+  
+      .detail__link {
+        color: $color-sky_blue;
+        text-decoration: underline;
+      }
+    }
+  }
+}

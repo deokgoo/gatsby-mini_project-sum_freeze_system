@@ -1,0 +1,175 @@
+@import '../../style/color';
+@import '../../style/common';
+
+.inquiry__label {
+  padding: 4px 0;
+  width: 124px;
+  height: auto;
+  display: block;
+  background-color: $color-brown_yellow;
+  font-size: 18px;
+  letter-spacing: 0.3em;
+  color:white;
+  text-align: center;
+}
+
+@mixin mixin-inquiry-text {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 20px;
+  letter-spacing: 0.1em;
+}
+
+.inquiry {
+  @include mixin-section;
+  background-color: $color-gray_blue;
+  
+  .inquiry__chr {
+    margin: 0 auto;
+    width: 195px;
+    height: 140px;
+    background-image: url('../../images/thank_you.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+
+  .inquiry__groups {
+    margin-bottom: 28px;
+    display: flex;
+    flex-direction: column;
+
+    .inquiry__title {
+      margin-bottom: 8px;
+      font-size: 22px;
+      line-height: 32px;
+      letter-spacing: -0.01em;
+      text-align: center;
+    }
+  
+    .inquiry__desc {
+      margin-bottom: 14px;
+      font-size: 16px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .inquiry__submit {
+      display: block;
+      padding: 8px 27px;
+      margin: 0 auto;
+      border-radius: 12px;
+      background-color: $color-strong_blue;
+      color: $color-white;
+      font-size: 14px;
+      font-weight: bold;
+      line-height: 16px;
+      letter-spacing: 0.3em;
+      text-align: center;
+    }
+  }
+
+  .inquiry__detail-groups {
+    display: flex;
+    flex-direction: column;
+
+    .inquiry__contracts {
+      display: inline-block;
+
+      dl {
+        padding: 12px 10px 24px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+  
+      dt {
+        min-width: 130px;
+      }
+
+      dt:first-child {
+        margin-top: 0;
+      }
+  
+      dt,
+      dd {
+        width: 50%;
+        @include mixin-inquiry-text;
+      }
+
+      dd {text-decoration: underline;}
+    }
+
+    .inquiry__fax {
+      p {
+        padding: 12px 10px 24px;
+        font-size: 16px;
+        font-weight: bold;
+      }
+    }
+
+    .inquiry__email {
+      p {
+        padding: 12px 10px 24px;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+// >=768px desktop
+@media screen and (min-width: 768px) {
+  .inquiry {
+    .inquiry__chr {
+      width: 260px;
+      height: 205px;
+    }
+    .inquiry__groups {
+      .inquiry__title {
+        margin-top: 0;
+      }
+    }
+
+    .inquiry__detail-groups {
+      display: flex;
+      flex-direction: column;
+  
+      .inquiry__contracts {
+        display: inline-block;
+  
+        dl {
+          padding: 12px 10px 36px;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+        }
+    
+        dt {
+          width: 50%;
+          min-width: 130px;
+          margin-top: 21px;
+          margin-bottom: 20px;
+        }
+      }
+  
+      .inquiry__fax {
+        p {
+          padding: 12px 10px 36px;
+          font-size: 16px;
+          line-height: 32px;
+          font-weight: bold;
+        }
+      }
+  
+      .inquiry__email {
+        p {
+          padding: 12px 10px 36px;
+          font-size: 22px;
+          line-height: 32px;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
