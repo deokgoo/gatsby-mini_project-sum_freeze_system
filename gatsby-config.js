@@ -64,54 +64,17 @@ module.exports = {
         cache_busting_mode: `none`, // `query`(default), `name`, or `none`
       },
     },
-    {
-      resolve: 'gatsby-plugin-sitemap',
-      options: {
-        query: `
-          {
-            allSitePage {
-              nodes {
-                path
-              }
-            }
-          }
-        `,
-        resolveSiteUrl: () => siteUrl,
-        serialize: ({allSitePage}) => {
-          console.log(allSitePage);
-          return allSitePage.nodes.map(_ => {
-            return {
-              url: `${siteUrl}${path}`,
-              changefreq: 'monthly',
-              priority: 1.0,
-            }
-          })
-        },
-      },
-    },
+    'gatsby-plugin-sitemap',
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
         resolveEnv: () => NETLIFY_ENV,
-        env: {
-          production: {
-            policy: [{ userAgent: '*', allow: '/' }],
-            sitemap: `${siteUrl}/sitemap/sitemap-index.xml`,
-            host: siteUrl
-          },
-          'branch-deploy': {
-            policy: [{ userAgent: '*', disallow: ['/'] }],
-            sitemap: `${siteUrl}/sitemap/sitemap-index.xml`,
-            host: null
-          },
-          'deploy-preview': {
-            policy: [{ userAgent: '', disallow: '*' }],
-            sitemap: `${siteUrl}/sitemap/sitemap-index.xml`,
-            host: null
-          }
-        }
+        options: {
+          host: 'https://sun-freeze-system.netlify.app',
+          sitemap: 'https://sun-freeze-system.netlify.app/sitemap/sitemap-index.xml',
+          policy: [{ userAgent: '*', allow: '/' }],
+        },
       }
     },
-
   ],
 };
