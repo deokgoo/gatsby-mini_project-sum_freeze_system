@@ -64,7 +64,31 @@ module.exports = {
         cache_busting_mode: `none`, // `query`(default), `name`, or `none`
       },
     },
-    'gatsby-plugin-sitemap',
+    {
+      resolve: 'gatsby-plugin-sitemap',
+      options: {
+        query: `
+          {
+            allSitePage {
+              nodes {
+                path
+              }
+            }
+          }
+        `,
+        resolveSiteUrl: () => siteUrl,
+        serialize: ({allSitePage}) => {
+          console.log(allSitePage);
+          return allSitePage.nodes.map(_ => {
+            return {
+              url: `${siteUrl}${path}`,
+              changefreq: 'monthly',
+              priority: 1.0,
+            }
+          })
+        },
+      },
+    },
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
@@ -72,7 +96,7 @@ module.exports = {
         env: {
           production: {
             policy: [{ userAgent: '*', allow: '/' }],
-            sitemap: `${siteUrl}/sitemap.xml`,
+            sitemap: `${siteUrl}/sitemap/sitemap-index.xml`,
             host: siteUrl
           },
           'branch-deploy': {
