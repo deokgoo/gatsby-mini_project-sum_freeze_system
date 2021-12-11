@@ -31,7 +31,7 @@ module.exports = {
         name: `sun freeze system`,
         short_name: `sun freeze`,
         start_url: `/`,
-        background_color: `#f7f0eb`,
+        background_color: `transparent`,
         theme_color: `#f7f0eb`,
         display: `standalone`,
         icon: `src/images/favicons/android-chrome-192x192.png`,
