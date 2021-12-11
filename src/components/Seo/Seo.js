@@ -1,12 +1,13 @@
 import * as React from 'react';
 import { Helmet } from 'react-helmet';
+import SunFreeze from '../../images/sun_freeze.jpeg';
 
 const siteUrl = 'https://sun-freeze-system.netlify.app';
 
 const Seo = () => {
   const meta = [];
   const lang = 'kr';
-  const img = '';
+  const img = SunFreeze;
   const title = '태양냉동';
   const description = '태양냉동은 항상 좋은 품질로 보답합니다.';
 

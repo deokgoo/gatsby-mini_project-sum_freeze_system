@@ -1,0 +1,163 @@
+.rolling_banner {
+  max-width: 100%;
+  margin-bottom: 12px;
+  overflow: hidden;
+
+  img {
+    width: 120px;
+    height: auto;
+  }
+
+  .rolling_banner__wrapper1,
+  .rolling_banner__wrapper2 {
+    height: 108px;
+    overflow: hidden;
+    -webkit-animation: bannermove 20s linear infinite;
+    -moz-animation: bannermove 20s linear infinite;
+    -ms-animation: bannermove 20s linear infinite;
+    -o-animation: bannermove 20s linear infinite;
+    animation: bannermove 20s linear infinite;
+  }
+
+  .rolling_banner__wrapper1 {width: 1728px;}
+  .rolling_banner__wrapper2 {width: 1849px;}
+
+  .rolling_banner__wrapper1,
+  .rolling_banner__wrapper2 {
+    .rolling_banner__item {
+      margin-right: 12px;
+    }
+  }
+
+  .rolling_banner__wrapper2 {
+    .rolling_banner__item:first-child {
+      margin-left: 18px;
+    }
+  }
+}
+
+// >= 768px desktop
+@media screen and (min-width: 768px) {
+  .rolling_banner {
+    margin-bottom: 24px;
+
+    img {
+      width: 210px;
+      height: auto;
+    }
+
+    .rolling_banner__wrapper1,
+    .rolling_banner__wrapper2 {
+      height: 195px;
+    }
+
+    .rolling_banner__wrapper1,
+    .rolling_banner__wrapper2 {
+      .rolling_banner__item {
+        margin-right: 24px;
+      }
+    }
+
+    .rolling_banner__wrapper2 {
+      .rolling_banner__item:first-child {
+        margin-left: 60px;
+      }
+    }
+
+    .rolling_banner__wrapper2 {
+      .rolling_banner__item:first-child {
+        margin-left: 30px;
+      }
+    }
+  }
+}
+
+// animation
+@keyframes bannermove {
+  0% {
+     margin-left: 0px;
+     opacity: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+  95% {
+    opacity: 1;
+  }
+  100% {
+     margin-left: -780px;
+     opacity: 0;
+  }
+ 
+ }
+ 
+ @-moz-keyframes bannermove {
+  0% {
+    margin-left: 0px;
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+  95% {
+    opacity: 1;
+  }
+  100% {
+    margin-left: -780px;
+    opacity: 0;
+  }
+ 
+ }
+ 
+ @-webkit-keyframes bannermove {
+  0% {
+    margin-left: 0px;
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+  95% {
+    opacity: 1;
+  }
+  100% {
+    margin-left: -780px;
+    opacity: 0;
+  }
+ 
+ }
+ 
+ @-ms-keyframes bannermove {
+  0% {
+    margin-left: 0px;
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+  95% {
+    opacity: 1;
+  }
+  100% {
+    margin-left: -780px;
+    opacity: 0;
+  }
+ 
+ }
+ 
+ @-o-keyframes bannermove {
+  0% {
+    margin-left: 0px;
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+  95% {
+    opacity: 1;
+  }
+  100% {
+    margin-left: -1728px;
+    opacity: 0;
+  }
+ }

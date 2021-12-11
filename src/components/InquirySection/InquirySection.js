@@ -13,7 +13,7 @@ const InquirySection = () => {
             <div className="inquiry__groups">
               <h1 className="inquiry__title">문의 사항은</h1>
               <p className="inquiry__desc">아래의 링크를 통해 문의 또는 연락주시면 <br className="d-md-none"/>감사하겠습니다.</p>
-              <a href="" target="_blank" className='inquiry__submit'>문의하기</a>
+              <a href="#" target="_blank" className='inquiry__submit'>문의하기</a>
             </div>
             <div className="inquiry__detail-groups">
               <div className="inquiry__contracts">
@@ -28,7 +28,7 @@ const InquirySection = () => {
                         <a href="tel:+8201035626163">010-3562-6163</a>
                       </li>
                       <li>
-                        <a href="mailto:rms600300@naver.com" type="email">rms600300@naver.com</a>
+                        <a href="mailto:rms600300@naver.com">rms600300@naver.com</a>
                       </li>
                     </ul>
                     
