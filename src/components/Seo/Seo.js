@@ -52,6 +52,14 @@ const Seo = () => {
           {
             name: `twitter:description`,
             content: description,
+          },
+          {
+            name: `google-site-verification`,
+            content: 'aDb3jegnszW2WX_61vjA-FLc9XahqIPwRNi-Qwfj6oI',
+          },
+          {
+            name: `naver-site-verification`,
+            content: '8843a324a91aff13f6ebc5aa15aed0100ab9a234',
           }
         ].concat(meta)}
       />

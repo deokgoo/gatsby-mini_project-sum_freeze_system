@@ -1,3 +1,15 @@
+const {
+  NODE_ENV,
+  URL: NETLIFY_SITE_URL = 'http://localhost:8000',
+  DEPLOY_PRIME_URL: NETLIFY_DEPLOY_URL = NETLIFY_SITE_URL,
+  CONTEXT: NETLIFY_ENV = NODE_ENV
+} = process.env;
+const siteUrl = NETLIFY_SITE_URL;
+
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
+
 module.exports = {
   siteMetadata: {
     siteUrl: 'https://sun-freeze-system.netlify.app',
@@ -52,5 +64,30 @@ module.exports = {
         cache_busting_mode: `none`, // `query`(default), `name`, or `none`
       },
     },
+    'gatsby-plugin-sitemap',
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        resolveEnv: () => NETLIFY_ENV,
+        env: {
+          production: {
+            policy: [{ userAgent: '*', allow: '/' }],
+            sitemap: `${siteUrl}/sitemap.xml`,
+            host: siteUrl
+          },
+          'branch-deploy': {
+            policy: [{ userAgent: '*', disallow: ['/'] }],
+            sitemap: null,
+            host: null
+          },
+          'deploy-preview': {
+            policy: [{ userAgent: '', disallow: '*' }],
+            sitemap: null,
+            host: null
+          }
+        }
+      }
+    },
+
   ],
 };
