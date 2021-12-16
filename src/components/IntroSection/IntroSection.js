@@ -5,7 +5,7 @@ import './style.scss';
 const IntroSection = () => {
   const descList = [
     '식품냉각용 모듈형 열교환기',
-    '금속동결',
+    '급속동결',
     '냉풍건조기',
     '제관설비',
     '냉동 냉장',
