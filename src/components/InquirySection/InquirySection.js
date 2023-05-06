@@ -21,20 +21,7 @@ const InquirySection = () => {
                   <h2 className="inquiry__label">문의</h2>
                 </div>
                 <dl>
-                  <dt>사장(류문선)</dt>
-                  <dd style={{marginBottom: '32px'}}>
-                    <ul>
-                      <li>
-                        <a href="tel:+8201035626163">010-3562-6163</a>
-                      </li>
-                      <li>
-                        <a href="mailto:rms600300@naver.com">rms600300@naver.com</a>
-                      </li>
-                    </ul>
-                    
-                  </dd>
-          
-                  <dt>이사(이강원)</dt>
+                  <dt>대표이사(이강원)</dt>
                   <dd style={{marginBottom: '32px'}}>
                     <ul>
                       <li>
@@ -42,19 +29,6 @@ const InquirySection = () => {
                       </li>
                       <li>
                         <a href="mailto:tlsfk3811@naver.com">tlsfk3811@naver.com</a>
-                      </li>
-                    </ul>
-                    
-                  </dd>
-
-                  <dt>영업부장(류호영)</dt>
-                  <dd>
-                    <ul>
-                      <li>
-                        <a href="tel:+8201088966162">010-8896-6162</a>
-                      </li>
-                      <li>
-                        <a href="mailto:rms6003@naver.com">rms6003@naver.com</a>
                       </li>
                     </ul>
                   </dd>
